@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Ejercicio {
+    public static void main(String[] args) throws IOException {
+        String archivo = "C:\\Users\\Alejandro Torres\\Escritorio\\Tareas\\presenciaredes.csv";
+        String columna;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            
+            while((columna = br.readLine()) !=null){
+                String[] valores = columna.split(",");
+                System.out.println(columna);
+               
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Ejercicio.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Ejercicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+}
